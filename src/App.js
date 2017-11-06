@@ -2,18 +2,17 @@ import React, { Component } from 'react'
 import Header from './components/Header.js'
 import Home from './components/Home.js'
 import PostList from './components/posts/PostList.js'
-import Albums from './components/albums/Albums.js'
-import Albums2 from './components/albums/Albums2.js'
+import AlbumsList from './components/albums/AlbumsList.js'
+import PhotosList from "./components/photos/PhotosList"
 import logo from './logo.svg'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
 
-import Photos from "./components/albums/Photos";
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom' // Router
+import { BrowserRouter as Router, Route } from 'react-router-dom' // Router
 
 class App extends Component {
 
-  render() {//<Navbar />
+  render() {
     return (
       <Router >
         <div className="App">
@@ -25,9 +24,8 @@ class App extends Component {
           <div id='App-container' className='container'>
             <Route exact path={'/'} component={Home}></Route>
             <Route path={'/list'} component={PostList}></Route>
-            <Route path={'/albums'} component={Albums}></Route>
-            <Route path={`/album/:albumId`} component={Photos}></Route>
-            <Route path={`/albums2`} component={Albums2}></Route>
+            <Route path={'/albums'} component={AlbumsList}></Route>
+            <Route path={`/album/:albumId`} component={PhotosList}></Route>
           </div>
         </div>
       </Router>

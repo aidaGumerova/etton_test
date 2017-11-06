@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { ListGroup, Breadcrumb, BreadcrumbItem } from 'reactstrap'
 import Album from "./Album";
+import { Link } from 'react-router-dom'
 
-class Albums extends Component {
+class AlbumsList extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      isPostsLoading: false,
+      isAlbumsLoading: false,
       albums: []
     };
   }
@@ -16,29 +17,30 @@ class Albums extends Component {
     this.initPosts();
   }
 
-  toggle = () => {
-    this.setState({ collapse: !this.state.collapse });
-  }
-
   initPosts() {
-    this.setState({isPostsLoading: true});
+    this.setState({isAlbumsLoading: true});
     fetch('https://jsonplaceholder.typicode.com/albums')
       .then(response => response.json())
       .then(jsonData => {
         this.setState({
-          isPostsLoading: false,
+          isAlbumsLoading: false,
           albums: jsonData
         });
-        console.log(jsonData);
       })
       .catch(error => console.log(error));
   }
 
-  render() {//item={album}
+  render() {
+
+    const {
+      isAlbumsLoading,
+      albums,
+    } = this.state;
+
     return (
       <ListGroup>
         {
-          this.state.isPostsLoading
+          isAlbumsLoading
           ?
           <div className="text-center">
             <div className="loader"></div>
@@ -46,14 +48,14 @@ class Albums extends Component {
           :
           <div className="justify-content-center">
             <Breadcrumb tag="nav" className='App-breadcrumb'>
-              <BreadcrumbItem tag="a" href="#">Home</BreadcrumbItem>
+              <Link tag="a" className="breadcrumb-item" to={'/'}>Home</Link>
               <BreadcrumbItem >Albums</BreadcrumbItem>
             </Breadcrumb>
             <h1>Albums</h1>
             <div className="col">
               {
-                this.state.albums.map(album => (
-                  <Album key={album.id} item={album} className={'col-xs-4'}/>
+                albums.map(album => (
+                  <Album key={album.id} album={album} className={'col-xs-4'}/>
                 ))
               }
             </div>
@@ -64,4 +66,4 @@ class Albums extends Component {
   }
 }
 
-export default Albums;
+export default AlbumsList;

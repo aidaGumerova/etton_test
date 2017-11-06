@@ -1,19 +1,25 @@
 import React, { Component } from 'react'
 import { Collapse, CardBody } from 'reactstrap'
-import 'classnames/index'
 
 class Comment extends Component {
-  state = {
-    comment: this.props.item
+
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      collapse: false
+    }
   }
 
-  toggle = () => {
+  toggle() {
     this.setState({ collapse: !this.state.collapse });
   }
 
   render() {
-    const { comment} = this.state;
-    //let commentName = ['comment-name',{ 'active': !!this.state.collapse }];
+    const {
+      comment
+    } = this.props;
+
     return (
       <div className="comment-box">
         <h4 className={!this.state.collapse ? 'comment-name': 'comment-name active'} onClick={this.toggle}>
