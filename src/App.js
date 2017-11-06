@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Header from './components/Header.js'
-import Home from './components/Home.js'
+import Header from './components/layout/Header.js'
+import Home from './components/home/Home.js'
 import PostList from './components/posts/PostList.js'
 import AlbumsList from './components/albums/AlbumsList.js'
 import PhotosList from "./components/photos/PhotosList"
