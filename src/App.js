@@ -4,7 +4,6 @@ import Home from './components/home/Home.js'
 import PostList from './components/posts/PostList.js'
 import AlbumsList from './components/albums/AlbumsList.js'
 import PhotosList from "./components/photos/PhotosList"
-import logo from './logo.svg'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
 
@@ -16,10 +15,6 @@ class App extends Component {
     return (
       <Router >
         <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
           <Header />
           <div id='App-container' className='container'>
             <Route exact path={'/'} component={Home}></Route>

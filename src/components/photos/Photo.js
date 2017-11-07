@@ -24,17 +24,17 @@ class Photo extends Component {
 
     return (
         <Card onClick={this.toggle.bind(this)} className={'card-photo'}>
-          <CardImg src={photo.thumbnailUrl} alt={photo.title}/>
-          <CardBody>
-            {photo.title}
-            {
-              this.state.isOpen &&
-              <Lightbox
-                mainSrc={photo.url}
-                onCloseRequest={() => this.setState({ isOpen: false })}
-              />
-            }
-          </CardBody>
+            <CardImg src={photo.thumbnailUrl} alt={photo.title}/>
+            <CardBody>
+                {photo.title}
+                {
+                  this.state.isOpen &&
+                  <Lightbox
+                    mainSrc={photo.url}
+                    onCloseRequest={() => this.setState({ isOpen: false })}
+                  />
+                }
+            </CardBody>
         </Card>
     )
   }

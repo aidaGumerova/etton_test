@@ -23,7 +23,7 @@ class Header extends Component {
     return (
       <div id='App-header'>
         <div className='container'>
-          <Navbar color="faded" light expand="md" id='App-header'>
+          <Navbar color="faded" light expand="md">
             <NavbarBrand href="/">Example</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>

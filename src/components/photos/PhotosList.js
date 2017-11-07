@@ -69,7 +69,7 @@ class PhotosList extends Component {
           <BreadcrumbItem >Album #{album.id} : {album.title}</BreadcrumbItem>
         </Breadcrumb>
         <h1>Album</h1>
-        <div className={'row'}>
+        <div className={'row album'}>
           {
             photos.map(photo => (
               <Photo photo={photo} key={photo.id}/>

@@ -46,7 +46,7 @@ class PostList extends Component {
             <BreadcrumbItem >Posts</BreadcrumbItem>
           </Breadcrumb>
           <h1>Posts</h1>
-
+          <div className='col'>
             <ListGroup>
             {
               this.state.posts.map(post => (
@@ -54,6 +54,7 @@ class PostList extends Component {
               ))
             }
             </ListGroup>
+          </div>
         </div>
     );
   }

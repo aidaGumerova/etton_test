@@ -28,7 +28,15 @@ a{
 
 #App-header{
   background-color: #61dafb;
+  padding-left: 0;
+  padding-right: 0;
 }
+
+#App-header .navbar{
+  padding-left: 0;
+  padding-right: 0;
+}
+
 #App-header a {
   color: #ffffff;
 }
@@ -48,8 +56,12 @@ a{
   to { transform: rotate(360deg); }
 }
 
+.container {
+  max-width: 100%;
+}
+
 #App-container{
-  padding: 15px;
+  padding: 5px 0 ;
   margin: 0 auto;
 }
 
@@ -128,13 +140,27 @@ a{
   color: #cccccc;
 }
 
+.album{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 .card-photo {
   float: left;
-  width: 33.333%;
+  width: 50%;
   padding: .75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5px;
   border: 0;
   cursor: pointer;
+}
+
+.card-photo .card-body{
+  line-height: normal;
+  padding: 10px;
+}
+
+.card-content-box{
+  border: 1px solid #f2f2f2;
 }
 
 .photo-card .card-body{
@@ -149,9 +175,65 @@ a{
   background-color: #000000;
 }
 
-@media (min-width: 576px){
+
+/* Малые девайсы («ландшафтные телефоны», >= 576px)*/
+@media (min-width: 576px) {
+  .container {
+    max-width: 100%;
+  }
+
   .photo-modal-dialog {
     max-width: 602px;
   }
+
+  .card-photo{
+    width: 33.33%;
+  }
+
+  .card-photo .card-body{
+    font-size: 12px;
+  }
+}
+
+/* Средние девайсы («таблетки», >= 768px)*/
+@media (min-width: 768px) {
+
+  #App-header{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .container {
+    max-width: 95%;
+  }
+
+  .card-photo .card-body{
+    font-size: 13px;
+  }
+
+  .card-photo{
+    margin-bottom: 10px;
+  }
+}
+
+/* Большие девайсы (десктопы, >= 992px)*/
+@media (min-width: 992px) {
+  .card-photo .card-body{
+    font-size: 14px;
+  }
+  .card-photo {
+    width: 20%;
+  }
+}
+
+/* Экстрабольшие девайсы (большие десктопы, >= 1200px)*/
+@media (min-width: 1200px) {
+  .card-photo {
+    width: 14.28%;
+  }
+  .container {
+    max-width: 1140px;
+  }
+
 }
 
